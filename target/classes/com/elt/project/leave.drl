@@ -1,0 +1,29 @@
+package com.elt.project;
+
+
+import com.elt.project.LeaveApplication;
+
+
+   rule "vacation leave rule"
+ruleflow-group "leaveRFG"
+
+when
+   $leaveApplication:LeaveApplication(leaveType== "Vacation",noOfYearsInCompany<2)
+then
+   System.out.println("vacation leave rule"+$leaveApplication.getLeaveType());
+   $leaveApplication.setLeaveApplicationStatus("REJECTED");
+end   
+
+
+     
+rule "total number of leave rule"
+ruleflow-group "leaveRFG"
+
+when
+   $leaveApplication:LeaveApplication(leaveBalance<totalNoOfLeavesApplied)
+then
+   System.out.println("total number of leave rule"+$leaveApplication.getLeaveType());
+   $leaveApplication.setLeaveApplicationStatus("REJECTED");
+end   
+     
+

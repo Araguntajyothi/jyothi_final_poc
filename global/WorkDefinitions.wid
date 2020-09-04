@@ -89,5 +89,16 @@
     "displayName" : "Milestone",
     "icon" : "defaultmilestoneicon.png",
     "category" : "Milestone"
-    ]
+    ],
+    [
+    "name" : "EmpTask",
+    "parameters" : [
+        "emp_in" : new ObjectDataType()
+    ],
+    "results" : [
+        "emp_out" : new ObjectDataType(),
+    ],
+    "displayName" : "EmpTask",
+    "icon" : "defaultservicenodeicon.png"
+  ]
 ]
